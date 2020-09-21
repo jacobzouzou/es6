@@ -19,3 +19,6 @@ run build:
     npm build:
         entry point .src/index.js
         output: ./dist/main.js
+
+
+https://webpack.js.org/plugins/
