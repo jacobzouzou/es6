@@ -16,11 +16,14 @@
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-arrow-functions": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "test": "test",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "Jacob",
   "license": "ISC"

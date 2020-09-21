@@ -2,6 +2,7 @@
 INSTALL WEBPACK:
 ***********************************
 npm i --save-dev webpack webpack-cli 
+npm install --save-dev webpack
 add package.json to project
 
 npm install @babel/polyfill @babel/runtime @babel/plugin-transform-runtime

@@ -1,26 +1,51 @@
-// {
-//     entry: [
-//         'babel-polyfill',
-//         // your app scripts should be here
-//     ],
-//         module: {
-//         loaders: [
-//             // Babel loader compiles ES2015 into ES5 for
-//             // complete cross-browser support
-//             {
-//                 loader: 'babel-loader',
-//                 test: /\.js$/,
-//                 // only include files present in the `src` subdirectory
-//                 include: [path.resolve(__dirname, "src")],
-//                 // exclude node_modules, equivalent to the above line
-//                 exclude: /node_modules/,
-//                 query: {
-//                     // Use the default ES2015 preset
-//                     // to include all ES2015 features
-//                     presets: ['es2015'],
-//                     pplugins: ['transform-runtime']
-//                 }
-//             }
-//         ]
-//     }
-// }
+const path = require('path');
+const webpack = require('webpack');
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = (env, options) => {
+    return {
+        mode: "development",
+        entry: './src/async.js',
+
+        output: {
+            path: path.resolve(__dirname, 'build'),
+            filename: 'main.js',
+        },
+
+        module: {
+            rules: [
+                { test: /\.css$/, use: 'css-loader' },
+                {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                },
+				{
+                    test: /\.(png|jpg|gif)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'images/'
+                            }
+                        }
+                    ]
+                },
+            ],
+        },
+
+        plugins: [
+            // new MiniCssExtractPlugin({
+            //     filename: 'style.css',
+            //     chunkFilename: '[id].css'
+            // })
+        ],
+
+    }
+};
