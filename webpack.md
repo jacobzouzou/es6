@@ -4,6 +4,9 @@ INSTALL WEBPACK:
 npm i --save-dev webpack webpack-cli 
 add package.json to project
 
+npm install @babel/polyfill @babel/runtime @babel/plugin-transform-runtime
+
+
 customize webpack:
  add file: webpack.config.js
  npm install -D babel-loader @babel/core @babel/preset-env webpack
