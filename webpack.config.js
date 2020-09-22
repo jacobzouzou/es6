@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, options) => {
     return {
@@ -11,7 +11,9 @@ module.exports = (env, options) => {
             path: path.resolve(__dirname, 'build'),
             filename: 'main.js',
         },
-
+        /*.. map is mandatory .*/
+        devtool: 'inline-source-map',
+        /*...*/
         module: {
             rules: [
                 { test: /\.css$/, use: 'css-loader' },
@@ -25,7 +27,7 @@ module.exports = (env, options) => {
                         }
                     }
                 },
-				{
+                {
                     test: /\.(png|jpg|gif)$/,
                     use: [
                         {
@@ -37,14 +39,18 @@ module.exports = (env, options) => {
                         }
                     ]
                 },
+                {
+                    test: /\.scss$/,
+                    use: [
+                        'style-loader',
+                        'css-loader',
+                        'sass-loader'
+                    ]
+                }
             ],
         },
-
         plugins: [
-            // new MiniCssExtractPlugin({
-            //     filename: 'style.css',
-            //     chunkFilename: '[id].css'
-            // })
+            new CleanWebpackPlugin(),
         ],
 
     }
