@@ -1,4 +1,4 @@
-// tagged templates: parse template with function:
+// tagged templates: parse template with function
 //first arg of function : array of string values
 //remaining args are related to expression
 //Function return string

@@ -1,7 +1,13 @@
 [
     {
-        "firstName": "Jacob",
-        "lastName": "ZOUZOU"
+        "user 1": {
+            "firstName": "jacob",
+            "lastName": "ZOUZOU"
+        },
+        "user 2": {
+            "firstName": "Luis",
+            "lastName": "PRINCE"
+        }
     },
     {
         "firstName": "Alain",

@@ -1,28 +1,42 @@
 function* calculator(input) {
-    var doubleThat = 2 * (yield (input / 2));
+    var doubleThat = 2 * (yield (input / 3));
     var another = yield (doubleThat);
     return (input * doubleThat * another);
 }
 let calc = calculator(3);
 
 let result=calc.next();
-// //first iteration return 10/2
-// function* calculator() {
-//     return 10 / 2;
+//first iteration:
+//input=3
+//yield(input/3) => return (input/3)
+
+// function* calculator(3) {
+//     return 3/3;
 // }
 console.log(result);
 
 result=calc.next(9);
-//second iteration return douleThat= 7 * 2
-// function* calculator(7) {
-//     let doubleThat= 7*2;
+//second iteration: 
+
+//doubleThat= "2*input"
+//yield(doubleThat) => return doubleThat 
+
+// function* calculator(9) {
+//     let doubleThat= 9*2;
 //     return doubleThat;
 // }
 console.log(result);
 
 result=calc.next(99);
-//second iteration return 14000
-// function* calculator(100) {
-//     return 10 * 14 * 100;
+//third iteration : 
+
+//input = 3 (store in first iterration)
+//doubleThat = 18 (store in second iterration)
+//another = 99 (from last interation)
+
+//return (input * doubleThat * another): 3 * 18 * 99
+
+// function* calculator(99) {
+//     return 3 * 18 * 99;
 // }
 console.log(result);

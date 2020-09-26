@@ -4,8 +4,8 @@
 // if (![1, 2].indexOf(3)) {
 //     console.log('Not found')
 // }
-
-if (![1, 2].includes(3)) {
+const searchValue=3;
+if (![1, 2].includes(searchValue)) {
     console.log('Not found')
 }
 
