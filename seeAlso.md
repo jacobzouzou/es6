@@ -1,7 +1,7 @@
 js learning sites: 
-https://react.org: use to get code template like "material.angular.io" for angular and "vuetity.com " for vue.js
+https://react.org: use to get code template like "material.angular.io", or vuetity.com
 https://jscomplete.com/react-cfp
-https://jscomplete.com/playground or https://codepen.io/
+https://jscomplete.com/playground (or https://codepen.io/)
 https://github.com/MicheleBertoli/css-in-js
 
 https://jscomplete.com/react-beyond-basics
@@ -20,4 +20,6 @@ https://codesandbox.io/s/new?file=/src/App.js
 
 existing mocking libraries: 
     https://github.com/jefflau/jest-fetch-mock 
-    use "react-testing-library" for test
+
+
+use "react-testing-library" for test
