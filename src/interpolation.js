@@ -49,7 +49,7 @@ const _interpolate = (literals, ...expressions) => {
         return string;
     })
 }
-const _interpolated = _interpolate`I paind ${0} ${1}`;
+const _interpolated = _interpolate`I paid ${0} ${1}`;
 const result3= _interpolated('500','£');
 console.log(result3);
 
