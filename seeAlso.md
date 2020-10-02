@@ -22,4 +22,7 @@ existing mocking libraries:
     https://github.com/jefflau/jest-fetch-mock 
 
 
-use "react-testing-library" for test
+use  for snapshot test
+ > npm install react-testing-library //or
+ > npm install react-test-renderer
+  

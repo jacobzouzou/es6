@@ -524,6 +524,16 @@ avoid side effect in testing
 snapshot:
 allow to test UI
 
+Test coverage:
+write package.json script section: 
+"coverage": "npm run test -- --coverage
+
+Debug resources:
+ google
+ stackoverflow
+ Reactiflux
+ reactjs.org =>github: create new bug
+ user also "flow" to debug code
 ************************************
 PROD
 ************************************
