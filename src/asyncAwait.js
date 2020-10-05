@@ -15,11 +15,10 @@ function find(url){
 
 //consume promise
 
-//.then () syntaxe
+//with .then () syntaxe
 find("https://www.javascript.com/").then(data=>console.log(data.length));
 
-//or use async/await  syntaxe
-
+//or with use async/await  syntaxe
 const read= async function read(){
     const data = await find("https://www.javascript.com/");
     console.log(data.length);
