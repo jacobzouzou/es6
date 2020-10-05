@@ -12,7 +12,7 @@ const data={
 }
 
 const {temp1, temp2, ...person}=data;
-const Jacob={
+const me={
     ...person,
 }
-console.log(Jacob.firstName,"", Jacob.lastName);
+console.log(me.firstName,"", me.lastName);
