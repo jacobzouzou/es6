@@ -1,3 +1,8 @@
+
+Babel: is new js generation compiler for old browser (TC39 web site)
+Declare  block scope var with : let
+Use Object.freeze() to freeze object
+
 ****************************************************************************************************
 REACT JS
 ****************************************************************************************************
@@ -544,3 +549,4 @@ output: ./dist/main.js
 
 
 https://webpack.js.org/plugins/
+>>>>>>> d97fc768ab7262e699c9315630062e8cc84107dd
