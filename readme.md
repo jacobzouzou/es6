@@ -517,8 +517,8 @@ Entrypoint main = main.js
 TESTING 
 ************************************
 jest:
-lib for testing js code like "Mocha"
-nstall :npm install -D jest
+lib for testing js code (like "Mocha", ...)
+install :npm install -D jest
 by default: jest search file with "test" in name: example: "App.test.js"
 
 Mocking:
