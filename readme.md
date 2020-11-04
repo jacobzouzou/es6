@@ -8,7 +8,7 @@ React: declarative programmation for dynamic data (user object and so on)
 jSX ( JavaScript and XML)
 declarative syntax of what a component UI should be
 describe UI not with string but with XHTML and JavaScript
-html attribute standard is React is camelCasing: onchange => onChange
+html attribute standard is React is camelCasing: "onchange" becomes "onChange"
 
 ****************************************************************************************************
 Ecma Script 2015 : es6

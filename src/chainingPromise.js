@@ -19,7 +19,7 @@ app.listen(3000, () => console.log("Server ready: http://localhost:3000"));
 //fetch
 const fetch = require("node-fetch");
 
-const statusPromise = (response) => {
+const getStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
     return Promise.resolve(response);
   } else {
@@ -30,7 +30,7 @@ const responseJson = (response) => response.json(); //return a promise
 
 //url must use http protocol so, file must be serve  from  web server: /
 fetch("http://localhost:3000")
-  .then(statusPromise)
+  .then(getStatus)
   .then(responseJson)
   .then((data) => {
     console.log(`Object entrees : ${Object.entries(data)}`);
@@ -42,7 +42,7 @@ fetch("http://localhost:3000")
   });
 
 fetch("http://localhost:3000/users")
-  .then(statusPromise)
+  .then(getStatus)
   .then(responseJson)
   .then((data) => {
     console.log(`Json response: ${JSON.stringify(data)}`);

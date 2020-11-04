@@ -1,8 +1,9 @@
 
-function usePromise(done) {
+function makeJob(done) {
     return new Promise((resolve, reject) => {
         if (done) {
             const workIsDone = "Work is done";
+            // throw "error";
             resolve(workIsDone);
         } else {
             const workIsNotDone = "Work is not done";
@@ -14,7 +15,7 @@ function usePromise(done) {
 
 
 (async () => {
-    await usePromise(true).then(message => {
+    await makeJob(true).then(message => {
         console.log(message);
     }).catch(error => {
         console.log(error);
