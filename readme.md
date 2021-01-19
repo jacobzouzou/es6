@@ -11,9 +11,9 @@ HTML: declarative programmation for static data
 React: declarative programmation for dynamic data (user object and so on)
 
 jSX ( JavaScript and XML)
-declarative syntax of what a component UI should be
+declarative syntax of what a component UI should be looked like
 describe UI not with string but with XHTML and JavaScript
-html attribute standard is React is camelCasing: "onchange" becomes "onChange"
+html attribute standard in React is camelCasing: Html "onchange" becomes  JSX "onChange"
 
 ****************************************************************************************************
 Ecma Script 2015 : es6
@@ -21,23 +21,26 @@ Ecma Script 2015 : es6
 "const" like "let": have block scope.
 "this" in arrow function inherit from execution context:
     arrow function is not suited as object methods and event callback (handler).
+
 Interpolation:
-    const str= `${var}`;
-    Template tags - see interpolation.js -:used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
+    const str= `${variable}`;
+    Template tags (see interpolation.js) : 
+      used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
     
     Examples:
-      import styled from "styled-components"    
-      const btn = styled.button `
-            font-size:1.5em;
-            background-color: blalck;
-            color:white    
+    
+      import styled from "styled-components":   
+        const btn = styled.button `
+              font-size:1.5em;
+              background-color: blalck;
+              color:white    
         `
       GraphQL:
-        const query=qql`
-            query{
-                ...
-            }    
-        `
+          const query=qql`
+              query{
+                  ...
+              }    
+          `
 
      Promise: return value proxy; it allow to work with asynchronous method without write callback;
      You can orchestrate several promises: Promise.all(), Promise.race(), Promise.resolve();

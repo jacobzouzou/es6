@@ -12,7 +12,7 @@ function makeJob(done) {
     });
 }
 
-makeJob(false).then(message => {
+makeJob(true).then(message => {
     console.log(message);
 }).catch(error => {
     console.log(error);

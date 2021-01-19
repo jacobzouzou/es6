@@ -15,7 +15,7 @@ function makeJob(done) {
 
 
 (async () => {
-    await makeJob(true).then(message => {
+    await makeJob(false).then(message => {
         console.log(message);
     }).catch(error => {
         console.log(error);
