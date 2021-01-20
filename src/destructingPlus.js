@@ -1,18 +1,21 @@
-const [first, second,, fourth]=[10,20,30,40];
-console.log(fourth);
+const myArray=[10,20,30,40];
+console.log("Destruct array: ",myArray);
+const [first, second,, fourth]=myArray;
+console.log("Fourth element:",fourth);
 
-const [one, ...restOfItems]=[10,20,30,40];
-console.log(restOfItems);
+const [one, ...restOfItems]=myArray;
+console.log("Three last elements:", restOfItems);
 
 const data={
-    temp1:'001',
-    temp2:'002',
     firstName:'Jacob',  
     lastName:'ZOUZOU'
 }
 
-const {temp1, temp2, ...person}=data;
-const me={
-    ...person,
-}
-console.log(me.firstName,"", me.lastName);
+console.log("Destructure object:", data);
+const {lastName}=data;
+console.log("Get last name: ",lastName);
+const {...person}=data;
+console.log("Get object: ",person);
+const me={...person}
+console.log("Get object: ",me);
+console.log("Get first name:", person.firstName);

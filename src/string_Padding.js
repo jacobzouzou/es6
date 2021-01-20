@@ -1,3 +1,5 @@
+//ES2017
+
 //string padding
 console.log("String padding:")
 console.log("Hello".padEnd(10), "world!");
