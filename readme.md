@@ -55,20 +55,21 @@ compile (transpiling) js from one standard to an other standard
 
 Example:
 compile  "JSX" => "DOM API" (regular JS) 
-transpilling must happen in  build time: set up in "webpack"
+transpilling must happen in build time: setup in "webpack"
 in JSX, all JS script is put in bracket:{}
 
 Install: 
   "npm install --save-dev @babel/core @babel/cli"  //don't install babel-cli locally
 
-run babel script localy:  
+How run babel script localy:  
   "npx babel script_file.js"
 
-configure babel with plugins: arrow functions (for example)
-  npm install --save-dev @babel/plugin-transform-arrow-functions
+configure babel with plugins: 
+  //for arrow functions (for example)
+  npm install --save-dev @babel/plugin-transform-arrow-functions   
   npm install --save-dev @babel/preset-env //is not plugin
 
-  add config file to project root folder: ".babelrc"
+  add babel config file  ".babelrc" to project root folder:
 
   {
       // "plugins": [
@@ -105,6 +106,7 @@ INSTALL HTTP SERVER:
 
 React component: 
 is a function which receive inputs and return UI (output): can manage private state, and reactive update (useEffect)
+
 virtual view (a copy of DOM tree) in memory: 
   generate HTML using js (not HTML template language),
   tree reconciliation for UI updating DOM
@@ -134,7 +136,7 @@ Two type of react components:
           name="Jacob"
         }
       }
-
+      //mandatory
       render(){
         return (
             <div>
@@ -144,7 +146,7 @@ Two type of react components:
       }
     }
 
-//Use ReactDOM to render compoment
+//Use ReactDOM to render compoment in browser
 ReactDOM.render(
   return (
     </MyComponent>,
