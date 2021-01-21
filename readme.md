@@ -1,29 +1,32 @@
-
-Babel: is new js generation compiler for old browser (TC39 web site)
-Declare  block scope var with : let
-Use Object.freeze() to freeze object
-
 ****************************************************************************************************
-REACT JS
+# REACT JS
 ****************************************************************************************************
-React : javascript UI library
+## React : javascript UI library
 HTML: declarative programmation for static data
 React: declarative programmation for dynamic data (user object and so on)
 
-jSX ( JavaScript and XML)
+## jSX ( JavaScript and XML)
 declarative syntax of what a component UI should be looked like
 describe UI not with string but with XHTML and JavaScript
 html attribute standard in React is camelCasing: Html "onchange" becomes  JSX "onChange"
 
+## Babel: 
+new js generation compiler for old browser (TC39 web site)
+Declare  block scope var with : let
+Use Object.freeze() to freeze object
+
 ****************************************************************************************************
-Ecma Script 2015 : es6
+# Ecma Script 2015 : es6
 ****************************************************************************************************
 "const" like "let": have block scope.
 "this" in arrow function inherit from execution context:
     arrow function is not suited as object methods and event callback (handler).
 
-Interpolation:
-    const str= `${variable}`;
+## Interpolation:
+    Example:
+    var value= 10;
+    const str= `${value}`;
+
     Template tags (see interpolation.js) : 
       used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
     
@@ -47,26 +50,92 @@ Interpolation:
 
      Asynchronous: callback => Promise => async/await
 
+****************************************************************************************************
+# Install REACT: from scratch or "create-react-app" tool
+****************************************************************************************************
+## from scratch: https://jscomplete.com/reactful:
+      full stack install: 
+        prod: 
+        1 init project in project folder: npm init -y
+        2 install express (web server): npm -i --save-dev express [npm install http-server concurrently --save-dev ]
+        3 install react-Dom: npm install --save-dev react-dom
+        4 install webpack: npm install --save-dev webpack
+        5 install webpack-cli: npm install --save-dev webpack-cli
+        6 install babel: npm install -D babel-loader @babel/core @babel/preset-env webpack
+        7 install for dev:
+            nodemon,
+            eslint, 
+            babel-eslint,
+            eslint-plugin-react,
+            jest, babel-jest,
+            react-jest-renderer
+
+            Config after install:
+              add file: index.html
+              add file: main.js 
+              add file: App.js
+              add fle: .eslintrc [.js] [esling.config.js]
+              add file: .babelrc [.js] [babel.config.js]
+              add file: webpack.config.js
+              write  package.json scripts section:
+                  dev-server: "nodemon --exec babel-node scr/server/server.js --ignore dist/"
+                  dev-bundle: "webpack -wd"
+                  "start": "concurrently \"http-server -a localhost -p 5000\" "
+                  or
+                  "start": "npm run open",
+                  "open": "concurrently \"http-server -a localhost -p 5000\""
+              add src folder
+              run: npx babel --watch src --out-dir . --presets react-app/prod 
+          9 run app:"npm run start" or "npm start"
+          10 run app (in separate terminals):
+            npm run dev-server
+            npm run dev-bundle: package app in "dist/main.js"
+ ##  From scratch summary: 
+    npm init -y
+    npm install react react-dom --save 
+    npm install webpack webpack-dev-server webpack-cli --save 
+    npm install babel-core babel-loader babel-preset-env babel-preset-react babel-webpack-plugin --save-dev  
+    npm install --save-dev @babel/cli 
+
+  ## Dev environment settings
+    Multiple tools
+      APIs
+      Configurations
+      Releases
+
+    Environments: 
+      dev & prod
+      test
+
+# Create app from existing application with "reactful" tool :
+  1 create app: npx reactful app_name
+  2 replace App.js code with existing app code
+
+## with "create-react-app" tool
+  1 npm install -g create-react-app
+  2 create-react-app app_name or (npx create-react-app app_name)
+  3 move to "app_name" folder
+  4 ["npm run eject" (display config files in project root folder)]
+  5 run app: npm start
 
 ****************************************************************************************************
-Babel
+# Babel
 ****************************************************************************************************
 compile (transpiling) js from one standard to an other standard
 
-Example:
-compile  "JSX" => "DOM API" (regular JS) 
+## Example:
+compile  "JSX" toward "DOM API" (regular JS) 
 transpilling must happen in build time: setup in "webpack"
 in JSX, all JS script is put in bracket:{}
 
-Install: 
+## Install: 
   "npm install --save-dev @babel/core @babel/cli"  //don't install babel-cli locally
 
-How run babel script localy:  
+## How run babel script localy:  
   "npx babel script_file.js"
 
-configure babel with plugins: 
-  //for arrow functions (for example)
-  npm install --save-dev @babel/plugin-transform-arrow-functions   
+## configure babel with plugins: 
+  npm install --save-dev @babel/plugin-transform-arrow-functions   //for arrow functions (for example)
   npm install --save-dev @babel/preset-env //is not plugin
 
   add babel config file  ".babelrc" to project root folder:
@@ -100,11 +169,7 @@ Babel presets:
   React:
 
 
-INSTALL HTTP SERVER:
-1  npm install http-server --save-dev
-2  npm install concurrently --save-dev
-
-React component: 
+# React component: 
 is a function which receive inputs and return UI (output): can manage private state, and reactive update (useEffect)
 
 virtual view (a copy of DOM tree) in memory: 
@@ -112,7 +177,7 @@ virtual view (a copy of DOM tree) in memory:
   tree reconciliation for UI updating DOM
   UI reflect DOM 
 
-Two type of react components: 
+## Two types of react components: 
     component name guide: PascalCasing
 
     //function component
@@ -145,8 +210,7 @@ Two type of react components:
         )
       }
     }
-
-//Use ReactDOM to render compoment in browser
+# Use ReactDOM to render compoment in browser
 ReactDOM.render(
   return (
     </MyComponent>,
@@ -154,86 +218,12 @@ ReactDOM.render(
   );
 )
 
-***************************************
-prepare dev environnement from scratch
-***************************************
-  create project folder: 
-    npm init -y
-    npm install --save-dev @babel/core @babel/cli 
-    [npm install babel-preset-react-app@3 ]
-
-  create source folder: 'src'
-    run: npx babel --watch src --out-dir . --presets react-app/prod 
-
-  add script in package.json
-    "start": "concurrently \"http-server -a localhost -p 5000\" "
-    or
-    "start": "npm run open",
-    "open": "concurrently \"http-server -a localhost -p 5000\""
-
-  run package.json/script: 
-    start: "npm run start" or "npm start"
-
-  Dev environment settings
-    Multiple tools
-      APIs
-      Configurations
-      Releases
-
-    Environments: 
-      dev & prod
-      test
-
-Different renderers:
-  DOM: document object model
-  SSR: server side render
-
-create-react-app: (popular tool to create react app)
-  1 "npm i -g create-react-appd"
-  2 "create-react-app app_name" or "npx create-react-app app_name" 
-  3 move to "app_name" folder
-  4 ["npm run eject" (display config files in project root folder)]
-  5 run app: mpm start
-
-create app from scratch (see advise project architecture):
-  https://jscomplete.com/reactful:
-    install guide, 
-      full stack install: 
-        prod: 
-        1 init project in project folder: npm init -y
-        2 install express: npm -i --save-dev express,
-        3 install react-Dom: npm install --save-dev react-dom
-        4 install webpack: npm install --save-dev webpack
-        5 install webpack-cli: npm install --save-dev webpack-cli
-        6 install babel: 
-          npm install -D babel-loader @babel/core @babel/preset-env webpack
-
-        7 install for dev:
-            nodemon,
-            eslint, 
-            babel-eslint,
-            eslint-plugin-react,
-            jest, babel-jest,
-            react-jest-renderer
-
-      Config after install:
-        add fle: .eslintrc [.js] [esling.config.js]
-        add file: .babelrc [.js] [babel.config.js]
-        add file: webpack.config.js
-        write  package.json scripts section:
-            dev-server: "nodemon --exec babel-node scr/server/server.js --ignore dist/"
-            dev-bundle: "webpack -wd"
-
-  run app (in separate terminals):
-    npm run dev-server
-    npm run dev-bundle: package app in "dist/main.js"
-
-Create app from existing application with "reactful" tool :
-  1 create app: "npx reactful app_name"
-  2 replace App.js code with existing app code
+## Different renderers:
+      DOM: document object model
+      SSR: server side render
 
 *****************************
-* component state
+# component state
 *****************************
 state:
 use app logic to change state
