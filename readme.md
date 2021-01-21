@@ -219,62 +219,62 @@ ReactDOM.render(
 *****************************
 # component state
 *****************************
-state:
+## state
 use app logic to change state
 use UI logic to display state
 centralize state in top component 
 child component must be stateless
 
-props:
-use by parent to pass value to child
+## props
+use by parent to pass value to child component
 never be changed in child component
 allow child to access parent methods
 
 *****************************
-* JSX
+# JSX
 *****************************
-HTML attribut standard guide:
+## HTML attribut standard guide
 - attribut name: camelCasing
 - class name camelCasing: <p className="header"></p> 
-- attribute for: becames "htmlFor"
+- attribute "for": becames "htmlFor"
 
-Form
+## Form
 JSX add some changes to how HTML form works
 more consistent "onChange" event on : input, textarea, checkbox, radio, select  
 vertical whitespace is eliminated
 
 **********************************
-DEPLOY APP
+# Deploy app
 **********************************
-npm run-script build
-npm install -g serve
-run app> serve -s bulid
+> npm run-script build
+> npm install -g serve
+> serve -s bulid (to run app)
 
-HOC (High Order Component)
+## HOC (High Order Component)
 component which take component as arg and returns component
-it use to extend or decorate an other component (composition)
+it is used to extend or decorate an other component (composition)
 component name convention: begin with  "with..." (withButton)
 
 ******************************************************
-ROUTING
+# ROUTING
 *******************************************************
 install: npm install react-router-dom
 
-Two kind of routes: 
+Two kinds of routes: 
 BrowserRouter (build classic url): https://himoci.com/home
 HashRouter: https://himoci.com/#/home
 
 Three components for routing: BrowserRouter (Router), Route, and Link
 
 **********************************************************
-REDUX
+# REDUX
 **********************************************************
 use context API rather Redux (for mid app)
 a way to manage application state in external global store (like "vuex" in "vue.js")
 whole state of application is representated by one js object  called "State" (State tree)
-Action (must have a type): js object that describes a change in minimal way
+Action (must have a type): js object whick describes a change in minimal way
 
-example:
+## examples
   Action type:
     const ADD_ITEM = 'ADD_ITEM'
 
@@ -294,7 +294,7 @@ example:
       }
     }
 
-Run action:
+## Run action:
   from dispatch:
       dispatch(addItem("item title"));
 
@@ -302,12 +302,12 @@ Run action:
     const dispatchAddItem=(title)=> dispatch(addItem("item title"));
     dispatchAddItem("React js");
 
-Reducer (can be multiple):
+## Reducer (can be multiple):
 pure function that takes args and return output without changing input or anything else.
 pure function that calculates next state, base on previous state.
 it returns a new state which replace the previous one
 
-never mutate its args
+## never mutate its args
 never mutate the sate: create new with: Object.assign({},...);
 no side effect: no api call to change anything
 never call no pure function to change something: example "Date.now(),..."
@@ -343,14 +343,15 @@ example:
       list: list(state.list, action)
     }
   }
-
-STORE
-hold state of app
+***************************************
+# STORE
+****************************************
+hold state of an app
 expose the state via: getState()
 allow to update state via: dispatch()
 allow us to (un)register a state change listner with: subscribe()
 
-example:  
+## example 
 import { createStore } from 'redux'
 import listManager from './reducers'
 
@@ -363,15 +364,16 @@ store.dispatch(addItem('Something'));
 const unsubscribe = store.subscribe(() =>n
   const newState = store.getState();  
 )
+
 unsubscribe();
 
-Data flow in redux is unidirectional:
+## Data flow in redux is unidirectional:
 1 call dispatch on store, passing an action
 2 store takes care of passing action to the Reducer, generating new state tree
 3 store (observable) updates state and notify observer
 
 ********************************************************************************
-Gatsby
+# Gatsby
 ********************************************************************************
 JAMstack: JavaScript, API, Markup stack
 install: npm install -g gatsby-cli
@@ -379,12 +381,12 @@ create project: gatsby new project_name
 run project: gastby develop (or npm start)
 
 ********************************************************************************
-Next.js
+# Next.js
 ********************************************************************************
 server side render: called also "static pre-rendering"
 SEO (Search Engine Optimization) issue for indexing content in client mode
 
-Install
+## Install
 1 create project folder
 2 install: npm install next react react-dom
 3 create "pages" folder in project folder
@@ -404,16 +406,16 @@ npm run build
 npm run start
 
 **********************************************************************************************************
-CUSTOMIZE COMPONENT
+# CUSTOMIZE COMPONENT
 **********************************************************************************************************
-With CSS (styles are autofixed when use "create-react-app")
+## With CSS (styles are autofixed when use "create-react-app")
 1 style - inline or object -: style is local to component (see HOC.js))
 2 class and css file: import "./file.css" - see HOC.js -
 3 use css module to scope css to component -see Hook.js -
   module name guide: "component_name.module.css"
   to use sass/scss: import .scss file
 
-With styled component
+## With styled component
 css in js: React Style, jsxstyle, Radium
 styled component:
  install: npm install styled-component
@@ -429,7 +431,7 @@ styled component:
   use props 
 
 ***********************************
-webpack 
+# webpack 
 ***********************************
 let us compile js modules: module bundler (like Gulp, Brocolli, and Grant: are taks runners)
 receive several files as input, and generate a single file (or a few files) that run your app
@@ -486,7 +488,7 @@ it can perform many operations:
       }
   }
 
-Run webpack:
+## Run webpack:
 write "build":"webpack build" in package.json scripts section
 npm run-script build
 
@@ -503,39 +505,37 @@ Entrypoint main = main.js
 
 
 ************************************
-TESTING 
+# TESTING 
 ************************************
-jest:
+## jest
 lib for testing js code (like "Mocha", ...)
 install :npm install -D jest
 by default: jest search file with "test" in name: example: "App.test.js"
 
-Mocking:
+## Mocking
 allow to test functionalities that depends on: network, database, files, external system
 test only concerns code, not infrastructure
 avoid side effect in testing
 
-snapshot:
-allow to test UI
+## snapshot: allow to test UI
 
-Test coverage:
+## Test coverage:
 write package.json script section: 
 "coverage": "npm run test -- --coverage
 
-Debug resources:
+## Debug resources
  google
  stackoverflow
  Reactiflux
  reactjs.org =>github: create new bug
  user also "flow" to debug code
+
 ************************************
-PROD
+# PROD
 ************************************
 build prod:   npm build
-s
 entry point .src/index.js
 output: ./dist/main.js
-
 
 https://webpack.js.org/plugins/
 >>>>>>> d97fc768ab7262e699c9315630062e8cc84107dd
