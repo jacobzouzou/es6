@@ -5,30 +5,28 @@
 HTML: declarative programmation for static data
 React: declarative programmation for dynamic data (user object and so on)
 
-## jSX ( JavaScript and XML)
+## JSX ( JavaScript and XML)
 declarative syntax of what a component UI should be looked like
 describe UI not with string but with XHTML and JavaScript
 html attribute standard in React is camelCasing: Html "onchange" becomes  JSX "onChange"
 
 ## Babel: 
 new js generation compiler for old browser (TC39 web site)
-Declare  block scope var with : let
+Declare  block scope with : let
 Use Object.freeze() to freeze object
 
 ****************************************************************************************************
-# Ecma Script 2015 : es6
+# ECMA Script 2015 : es6 overview 
 ****************************************************************************************************
 "const" like "let": have block scope.
-"this" in arrow function inherit from execution context:
-    arrow function is not suited as object methods and event callback (handler).
+"this" in arrow function inherit from execution context: arrow function is not suited as object methods and event callback (handler).
 
 ## Interpolation:
     Example:
     var value= 10;
     const str= `${value}`;
 
-    Template tags (see interpolation.js) : 
-      used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
+    Template tags (see interpolation.js) is used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
     
     Examples:
     
@@ -56,13 +54,13 @@ Use Object.freeze() to freeze object
 ## from scratch: https://jscomplete.com/reactful:
       full stack install: 
         prod: 
-        1 init project in project folder: npm init -y
+        1 init project folder: create app folder and run in "npm init -y"
         2 install express (web server): npm -i --save-dev express [npm install http-server concurrently --save-dev ]
         3 install react-Dom: npm install --save-dev react-dom
         4 install webpack: npm install --save-dev webpack
         5 install webpack-cli: npm install --save-dev webpack-cli
         6 install babel: npm install -D babel-loader @babel/core @babel/preset-env webpack
-        7 install for dev:
+        7 install for DEV packages:
             nodemon,
             eslint, 
             babel-eslint,
@@ -70,27 +68,29 @@ Use Object.freeze() to freeze object
             jest, babel-jest,
             react-jest-renderer
 
-            Config after install:
-              add file: index.html
-              add file: main.js 
-              add file: App.js
-              add fle: .eslintrc [.js] [esling.config.js]
-              add file: .babelrc [.js] [babel.config.js]
-              add file: webpack.config.js
-              write  package.json scripts section:
-                  dev-server: "nodemon --exec babel-node scr/server/server.js --ignore dist/"
-                  dev-bundle: "webpack -wd"
-                  "start": "concurrently \"http-server -a localhost -p 5000\" "
-                  or
-                  "start": "npm run open",
-                  "open": "concurrently \"http-server -a localhost -p 5000\""
-              add src folder
-              run: npx babel --watch src --out-dir . --presets react-app/prod 
-          9 run app:"npm run start" or "npm start"
-          10 run app (in separate terminals):
-            npm run dev-server
-            npm run dev-bundle: package app in "dist/main.js"
- ##  From scratch summary: 
+  ## Configuration
+    add file: index.html
+    add file: main.js 
+    add file: App.js
+    add fle: .eslintrc [.js] [esling.config.js]
+    add file: .babelrc [.js] [babel.config.js]
+    add file: webpack.config.js
+    write  package.json scripts section:
+        "dev-server": "nodemon --exec babel-node scr/server/server.js --ignore dist/"
+        "dev-bundle": "webpack -wd"
+        "start": "concurrently \"http-server -a localhost -p 5000\" "
+        or
+        "start": "npm run open",
+        "open": "concurrently \"http-server -a localhost -p 5000\""
+    add "src" folder
+    run: npx babel --watch src --out-dir "./dist" --presets react-app/prod 
+
+  ## Run app
+    run app: "npm start" or "npm run start"
+    run app (in separate terminals):
+      npm run dev-server
+      npm run dev-bundle: package app in "dist/main.js"
+  ## From scratch summary: 
     npm init -y
     npm install react react-dom --save 
     npm install webpack webpack-dev-server webpack-cli --save 
@@ -98,14 +98,8 @@ Use Object.freeze() to freeze object
     npm install --save-dev @babel/cli 
 
   ## Dev environment settings
-    Multiple tools
-      APIs
-      Configurations
-      Releases
-
-    Environments: 
-      dev & prod
-      test
+    Multiple tools: APIs, Configurations, Releases
+    Environments: dev & prod,  test
 
 # Create app from existing application with "reactful" tool :
   1 create app: npx reactful app_name
