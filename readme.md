@@ -606,3 +606,19 @@ http://www.writeapp.net
 http://ia.net/writer/mac  
 http://www.bloomingsoft.com/listacular  
 http://lab.hakim.se/reveal-js
+
+# Misc
+## Fix CORS error from html app (see html-react-app)
+start chrome  --allow-file-access-from-files "C:\Users\jacob\source\repos\Learning\JS Frameworks\React\Flavio\html-react-app\index.html"
+//or run file in a small web server: 
+express, docker, ...
+
+## Use sandbox 
+or use sandox
+ - https://codesandbox.io/s/:
+    - "pend" for one js script file, and "project" for multiple files
+    - not use "import {module} from "file", but use "const {module}= file;"
+
+ - https://codepen.io/flaviocopes/pen/VqeaxB 
+
+
