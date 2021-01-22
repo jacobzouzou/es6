@@ -10,24 +10,25 @@ http://www.writeapp.net
 http://ia.net/writer/mac  
 http://www.bloomingsoft.com/listacular  
 http://lab.hakim.se/reveal-js
-## React : JavaScript UI library
-HTML: declarative programmation for static data.  
-React: declarative programmation for dynamic data (user object and so on).
+
+## React is JavaScript UI library
+HTML is declarative programmation for static data.  
+React is declarative programmation for dynamic data like user object and so on.
 
 ## JSX ( JavaScript and XML)
-Declarative syntax of what a component UI should be looked like.  
-Describe UI with XHTML and JavaScript.  
-Html attribute standard in React is camelCasing : Html "onchange" becomes  JSX "onChange".
+JSX is a declarative syntax of what a component UI should be looked like.  
+It describes UI with XHTML and JavaScript.  
+Html attribute standard in React is camelCasing : Html `onchange` becomes in JSX `onChange`.
 
 ## Babel
-New js generation compiler for old browser (TC39 web site).  
-Declare  block scope with : let.  
-Use Object.freeze() to freeze object
+Babel il a  new JS generation compiler for old browser (TC39 web site).  
+It declares  block scope with : let.  
+It uses Object.freeze() to freeze object
 
 # ECMA Script 2015 : es6 overview 
-
-"const" like "let" : have block scope.  
-"this" in arrow function inherit from execution context : arrow function is not suited as object methods and event callback (handler).
+## Some examples
+ - "const" like "let" : have block scope.  
+- "this" in arrow function inherit from execution context : arrow function is not suited as object methods and event callback (handler).
 
 ## Interpolation
 ### Example:
@@ -35,45 +36,47 @@ Use Object.freeze() to freeze object
     const str= `${value}`;
   
   
-  Template tags (see interpolation.js) is used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
+  Tagget template is used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
 
   Examples:
 
-  import styled from "styled-components":   
-  
+    import styled from "styled-components";  
       const btn = styled.button `
             font-size:1.5em;
             background-color: blalck;
             color:white    
-      `
+      `;
 
     GraphQL:
         const query=qql`
             query{
                 ...
             }    
-        `
+        `;
   
 
-  ### Promise
-  Return value proxy; it allow to work with asynchronous method without write callback;  
-  You can orchestrate several promises: Promise.all(), Promise.race(), Promise.resolve();
+  ## Promise
+  Promise returns value proxy ; it allows to work with asynchronous method without write callback ;  
+  You can orchestrate several promises: 
+  
+    Promise.all(), Promise.race(), Promise.resolve();
 
   Asynchronous: callback => Promise => async/await
 
 
 # Install REACT
-React can be install from scratch or from "create-react-app" tool
-## From scratch (https://jscomplete.com/reactful
+React can be installed from scratch or from "create-react-app" tool
+## [From scratch](https://jscomplete.com/reactful)
       Full stack install: 
-        prod: 
-        1 init project folder: create app folder and run in "npm init -y"
-        2 install express (web server): npm -i --save-dev express [npm install http-server concurrently --save-dev ]
+        For production: 
+        1 init project folder: create app folder and run `npm init -y` from it
+        2 install express (web server): npm -i --save-dev express 
+        [npm install http-server concurrently --save-dev ]
         3 install react-Dom: npm install --save-dev react-dom
         4 install webpack: npm install --save-dev webpack
         5 install webpack-cli: npm install --save-dev webpack-cli
         6 install babel: npm install -D babel-loader @babel/core @babel/preset-env webpack
-        7 install for DEV packages:
+        7 install development packages:
             nodemon,
             eslint, 
             babel-eslint,
@@ -99,45 +102,52 @@ React can be install from scratch or from "create-react-app" tool
     run: npx babel --watch src --out-dir "./dist" --presets react-app/prod 
 
   ## Run app
-    run app: "npm start" or "npm run start"
+    "npm start" or "npm run start"
+
     run app (in separate terminals):
       npm run dev-server
       npm run dev-bundle: package app in "dist/main.js"
   ## From scratch summary: 
-    npm init -y
-    npm install react react-dom --save 
-    npm install webpack webpack-dev-server webpack-cli --save 
-    npm install babel-core babel-loader babel-preset-env babel-preset-react babel-webpack-plugin --save-dev  
-    npm install --save-dev @babel/cli 
+    1. npm init -y
+    2. npm install react react-dom --save 
+    3. npm install webpack webpack-dev-server webpack-cli --save 
+    4. npm install babel-core babel-loader babel-preset-env babel-preset-react babel-webpack-plugin --save-dev  
+    5. npm install --save-dev @babel/cli 
 
   ## Dev environment settings
     Multiple tools: APIs, Configurations, Releases
-    Environments: dev & prod,  test
+    Environments: dev, prod, and test
 
-# Create app from existing application with "reactful" tool
-  1. create app: npx reactful app_name
-  2. replace App.js code with existing app code
+# Create app from existing application
+## Create app
+>1. npm install -g create-react-app
+>2. create-react-app app_name or (npx create-react-app app_name)
+>3. move to "app_name" folder
+>4. ["npm run eject" (display config files in project root folder)]
 
-## with "create-react-app" tool
-  1. npm install -g create-react-app
-  2. create-react-app app_name or (npx create-react-app app_name)
-  3. move to "app_name" folder
-  4. ["npm run eject" (display config files in project root folder)]
-  5. run app: npm start
+## Create app with "reactfule"
+ >Create app: `npx reactful app_name` 
+
+ >Replace `App.js` code with existing app code
+
+ Run app: `npm start`
 
 # Babel
 
-Compile (transpiling) js from one standard to an other standard. For example it can compile  "JSX" toward "DOM API" (regular JS). Transpilling must happen in build time: setup in "webpack". in JSX, all JS script is put in bracket:{}
+Compile (transpiling) JS from one standard to an other standard. For example it can compile  JSX to DOM API (regular JS). Transpilling must happen in build time (setup in webpack). in JSX, all JS script is put in bracket:`{}`
 
-## Install
-    npm install --save-dev @babel/core @babel/cli"  //don't install babel-cli locally
+## Install Babel
+    npm install --save-dev @babel/core @babel/cli    
 
-## How run babel script localy  
-    "npx babel script_file.js"
+Nb: don't install babel-cli locally
+
+## Run babel script localy  
+    npx babel script_file.js
 
 ## configure babel with plugins
-    npm install --save-dev @babel/plugin-transform-arrow-functions  //for arrow functions (for example)
-    npm install --save-dev @babel/preset-env //is not plugin
+Example: for arrow functions
+
+    npm install --save-dev @babel/plugin-transform-arrow-functions  
 
   Add babel config file  ".babelrc" to project root folder
 
@@ -163,28 +173,33 @@ Compile (transpiling) js from one standard to an other standard. For example it 
         ]    
     }
 
-plugins url: https://bablejs.io/docs/en/plugins
+[Webpack plugins urls](https://bablejs.io/docs/en/plugins)
+## Babel presets
+A preset is a set of plugins used to support particular language features.   
+The two presets Babel uses by default:  
+- es2015 : Adds support for ES2015 (or ES6)  
+- JavaScript. react : Adds support for JSX.
+### Install preset (present/env)
 
-Babel presets: 
+    npm install --save-dev @babel/preset-env
 
-env: what "env" variable you want to support  
-React:
+@babel/preset-env is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). This both makes your life easier and JavaScript bundles smaller.
 
 # React component
-Component is a function which receive inputs and return UI (output): can manage private state, and reactive update (useEffect).
+Component is a function which receive inputs and return UI (output): can manage private state, and reactive update (`useEffect`).
 
-Virtual view (a copy of DOM tree) in memory: 
+Component is a virtual view (a copy of DOM tree) in memory: 
 
-    Generate HTML using JS (not HTML template language),  
-    Tree reconciliation for UI updating DOM,  
-    UI reflect DOM. 
+- Generate HTML using JS (not HTML template language),  
+- Tree reconciliation for UI updating DOM,  
+- UI reflect DOM. 
 
 ## Two types of react components
 Component name guide is PascalCasing
 
-Function component
+### Function component
 
-    const  = ()=>{
+    const MyComponent  = ()=>{
         return (
             <>
                 UI (html elements)
@@ -192,18 +207,15 @@ Function component
         ); 
     }
 
-class component 
+### Class component 
 
     export class myComponent extend React.Component {
-
-      //other components
-
+      ...
       constructor(){
         this.sate={
           name="Jacob"
         }
       }
-      //mandatory
       render(){
         return (
             <div>
@@ -213,7 +225,7 @@ class component
       }
     }
 
-## Use ReactDOM to render compoment in browser
+### Use ReactDOM to render compoment in browser
     ReactDOM.render(
       return (
         </MyComponent>,
@@ -222,41 +234,44 @@ class component
     )
 
 ### Different renderers
-* DOM: document object model
-* SSR: server side render
+* DOM: document object model.
+* SSR: server side render.
 
 # Component state
-## State
+## State (guidelines)
 * Use app logic to change state
 * Use UI logic to display state
 * Centralize state in top component 
 * Child component must be stateless
 
-## Props
+## Props (guidelines)
 * Use by parent to pass value to child component
 * Never be changed in child component
 * Allow child to access parent methods
 
 # JSX
-## HTML attribut standard guide
-- Attribut name : camelCasing
-- Class name camelCasing : <p className="header"></p> 
-- Attribute "for" : becames "htmlFor"
+## HTML attribut standard guide in JSX
+Class and Attribut name : camelCasing
+>\<p className="header"></p>
+>\<p htmlFor="Name"></p> 
 
 ## Form
-- JSX add some changes to how HTML form works
-- More consistent "onChange" event on : input, textarea, checkbox, radio, select  
-- Vertical whitespace is eliminated
+JSX add some changes to how HTML form works. More consistent `onChange` event to: input, textarea, checkbox, radio, select  
+>\<form><input type="text" onChange=""\>\</from>
+
+Vertical whitespace is eliminated
 
 # Deploy app
     > npm run-script build
     > npm install -g serve
-    > serve -s bulid (to run app)
+ ### Run app
+
+    > serve -s bulid
 
 ## HOC (High Order Component)
 - Component which take component as arg and returns component
 - It is used to extend or decorate an other component (composition)
-- Component name convention: begin with  "with..." (withButton)
+- Component name convention: begin with  `with...`; ex: withButton.
 
 # Routing
 ## Install
@@ -264,29 +279,29 @@ class component
 
 Two kinds of routes: 
 
-BrowserRouter : build classic url like `https://himoci.com/home`.  
-HashRouter : build url with # like `https://himoci.com/#/home`.  
+BrowserRouter : build classic url like : `https://himoci.com/home`.  
+HashRouter : build url with # like : `https://himoci.com/#/home`.  
 
 Three components for routing: BrowserRouter (Router), Route, and Link
 
 # Redux
 - Use context API rather Redux (for mid app).
-- A way to manage application state in external global store (like "vuex" in "vue.js").
-- Whole state of application is representated by one js object  called "State" (State tree).
-- Action (must have a type): js object whick describes a change in minimal. way
+- Is a way to manage application state in external global store (like "vuex" in "vue.js").
+- Whole state of application is representated by one JS object  called "State" (State tree).
+- Action (must have a type): JS object whick describes a change in minimal. way
 
-## Examples
-  ### Action type
+## Example
+  ### Define action type
     const ADD_ITEM = 'ADD_ITEM'
 
-  ### Action definition:
+  ### Set action definition
 
     const action = { 
       type: ADD_ITEM, 
-      title: 'first item' 
+      title: 'First item' 
       }
 
-  ### Action creator
+  ### Define action creator (constructor)
 
     function addItem(title){
       return {
@@ -297,24 +312,23 @@ Three components for routing: BrowserRouter (Router), Route, and Link
 
 ## Run action
   ### From dispatch
-      dispatch(addItem("item title"));
+      dispatch(addItem("Hello Redux !"));
 
   ### From dispatch function:
-    const dispatchAddItem=(title)=> dispatch(addItem("item title"));
-    dispatchAddItem("React js");
+    const dispatchAddItem=(title)=> dispatch(addItem(title));
+    dispatchAddItem("Hello Redux World !");
 
 ## Reducer (can be multiple)
-Pure function that takes args and return output without changing input or anything else.  
-Pure function that calculates next state, base on previous state.
-it returns a new state which replace the previous one.
+Reducer is pure JS function which takes args and returns output without changing input or anything else.  
+Pure function calculates next state based on previous state, and returns a new state to replace the previous one.
 
-## Never mutate its args
-- Never mutate the sate: create new with: Object.assign({},...);
-- No side effect: no api call to change anything
-- Never call no pure function to change something: example "Date.now(),..."
+## Never mutate function args
+- Never mutate the sate: create new state with  `Object.assign({},...)`.
+- No side effect: no api call to change anything.
+- Never call no pure function as `Date.now(),...` to change something.
 
-### Example
-    //for one state
+### Examples
+  For only one state 
 
     const title = (state = '', action) => {
       if (action.type === 'CHANGE_LIST_TITLE') {
@@ -324,20 +338,22 @@ it returns a new state which replace the previous one.
       }
     }
 
-    //for several states
+  For several states
+
     const list = (state = [], action) => {
-    switch (action.type) {
-      case 'ADD_ITEM':
-        return state.concat([{ title: action.title }])
-      case 'REMOVE_ITEM':
-        return state.map((item, index) =>
-          action.index === index ? { title: item.title } : item))
-      default:
-        return state
-      }
+      switch (action.type) {
+        case 'ADD_ITEM':
+          return state.concat([{ title: action.title }])
+        case 'REMOVE_ITEM':
+          return state.map((item, index) =>
+            action.index === index ? { title: item.title } : item))
+        default:
+          return state
+        }
     }
 
-    //for whole state
+For whole state object
+
     const listManager = (state = {}, action) => {
       return {
         title: title(state.title, action),
@@ -346,9 +362,9 @@ it returns a new state which replace the previous one.
     }
 # Store
 - Hold state of an app.
-- Expose the state via: getState().
-- Allow to update state via: dispatch().
-- Allow us to (un)register a state change listner with: subscribe().
+- Expose the state via with: `getState()`.
+- Allow to update state via: `dispatch()`.
+- Allow us to (un)register a state change listner with: `subscribe()`.
 
 ## Example 
     import { createStore } from 'redux';
@@ -358,47 +374,44 @@ it returns a new state which replace the previous one.
     let store = createStore(listManager, preexistingState);
 
     store.getState();
-    store.dispatch(addItem('Something'));
+    store.dispatch(addItem('Item Title'));
 
-    const unsubscribe = store.subscribe(() =>n
+    const unsubscribe = store.subscribe(() =>
       const newState = store.getState();  
     )
 
     unsubscribe();
 
-## Data flow in redux is unidirectional:
-1. Call dispatch on store, passing an action
-2. Store takes care of passing action to the Reducer, generating new state tree
-3. Store (observable) updates state and notify observer
+## Data flow in redux is one way (unidirectional)
+1. Call `dispatch()` on store, passing an action.
+2. Store takes care of passing action to the Reducer to generating new state tree.
+3. Store (observable) updates state and notify observer.
 
 # Gatsby
 JAMstack: JavaScript, API, Markup stack.
 
-1. Install: npm install -g gatsby-cli
-3. Create project: gatsby new project_name
-4. Run project: gastby develop (or npm start)
+1. Install: `npm install -g gatsby-cli`
+3. Create project: `gatsby new project_name`
+4. Run project: `gastby develop` or `npm start`
 
 
 # Next.js
-Server side render: called also "static pre-rendering".  
-SEO (Search Engine Optimization) issue for indexing content in client mode
+Next use Server side render (called also "static pre-rendering").  
+___Nb: SEO (Search Engine Optimization) issue for indexing content in client mode___
 
 ## Install
-1. create project folder
-2. install: npm install next react react-dom
-3. create "pages" folder in project folder
-4. add package.json with :
-  `
-    {
-      "scripts":{
-        "dev":"next"
-      }
+1. Create project folder
+2. Install: npm install next react react-dom
+3. Create "pages" folder in project folder
+4. Edit package.json : `{
+    "scripts":{
+      "dev":"next"
     }
-  `
-5. Run next: npm run dev
+  }`
+5. Run next : `npm run dev`
 
-- Static site hosts: Netlify, Firebase hosting,...
-- Process require to declare urls that compose the site 
+Static site hosts : Netlify, Firebase hosting, ...  
+Process require to declare the urls that compose the site 
 
 ## Deployment
     npm run build
@@ -407,55 +420,67 @@ SEO (Search Engine Optimization) issue for indexing content in client mode
 # Customize component
 ## With CSS (styles are autofixed when use "create-react-app")
 - Style - inline or object -: style is local to component (see HOC.js))
-- Class and css file: import "./file.css" - see HOC.js -
-- Use css module to scope css to component -see Hook.js -
-- Module name guide: "component_name.module.css"
-- To use sass/scss: import .scss file
+- Class and css file: import "./file.css" (see HOC.js)
+- Use css module to scope css to component (see Hook.js)
+- Module name guide: `component_name.module.css`
+- To use sass/scss: `import .scss file`
 
 ## With styled component
-css in js: React Style, jsxstyle, Radium
+css in JS: React Style, jsxstyle, Radium
 
 ### Styled component
-  
-    1. intall styled component: npm install styled-component
-    2. import styled from "styled-components": use "tagged template" (interpolation ) to customize components
+#### Install
+    npm install styled-component;
+    
 
-Example
+#### use style
 
+    import styled from "styled-components";
     const btn = styled.button `
         font-size:1.5em;
         background-color: blalck;
         color:white    
     `
-  use props 
+    ...
 
-# webpack 
-Let us compile js modules: module bundler (like Gulp, Brocolli, and Grant: are taks runners).  
-Receive several files as input, and generate a single file (or a few files) that run your app.
+# Webpack 
+It Let us compile JS modules: module bundler (like Gulp, Brocolli, and Grant, are taks runners).  
+It receives several files as input, and generate a single file (or a few files) that run your app.
 
-It can perform many operations: 
+It can perform many operations like : 
   - watch task and re-run them,
   - bundle resources, 
   - run babel,
   - run dev server,
   - ... 
 
-  Receive an entry point (can be html file with script tage), analyse and generate a single js needed to run app
+  Webpack receives an entry point (can be html file with script tage), analyse and generate a single JS file needed to run app.
 
-  ## Install (--save-dev or -D for local install)
+  ## Install 
+  Intall options : --save-dev or -D for local install  
+
     npm i --save-dev webpack webpack-cli 
     npm install -D babel-loader @babel/core @babel/preset-env 
     npm install @babel/polyfill @babel/runtime @babel/plugin-transform-runtime
 
-  Default (convention): ./src/index.js (entry), ./dist/main.js (output), and production mode.  
-  Customize webpack: add webpack.config.js in project root folder
+## Default conventions
+
+> Entry: ./src/index.js
+
+> Output: ./dist/main.js
+
+> Mode: production  
+
+## Customize webpack
+
+Add `webpack.config.js` in project root folder.
 
   Example
 
     const path = require('path');
     const webpack = require('webpack');
 
-    //add plugins
+    //add plugins if needed
     const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
     module.exports = (env, options) => {
@@ -489,8 +514,12 @@ It can perform many operations:
         }
     }
 
-## Run webpack
-    write "build":"webpack build" in package.json scripts section
+## Run Webpack
+Edit `package.json` script section with:
+
+    "build":"webpack build"
+Run package
+
     npm run-script build
 
 Example off result
@@ -507,28 +536,30 @@ Example off result
 
 # Testing 
 ## jest
-Library for testing js code (like "Mocha", ...)  
-install: `npm install -D jest`  
-by default: jest search file with "test" in name  
-Example: `App.test.js`
+Library for testing JS code (like "Mocha", ...).  
+Install : `npm install -D jest`  
+By default, jest search file with "test" in name  like : `App.test.js`
 
 ## Mocking
 Allow to test functionalities that depends on: network, database, files, external system.  
 Test only concerns code, not infrastructure.  
 Avoid side effect in testing.  
-Snapshot: allow to test UI.
+Snapshot : allow to test UI.
 
-## Test coverage:
-  write package.json script section
+## Test coverage
+  ### Edit `package.json` script section
 
     "coverage": "npm run test -- --coverage"
+  ### Run test coverage
+
+    npm [run] coverage
 
 ## Debug resources
- Google  
+ Google: dev tool  
  Stackoverflow  
  Reactiflux  
- reactjs.org => github : create new bug  
- user also "flow" to debug code
+ reactjs.org > github : create new bug  
+ Flow (tool): to debug code
 
 # Production
 
@@ -537,7 +568,7 @@ build prod:   npm build
 entry point .src/index.js
 output: ./dist/main.js
 ```
-
+# Other resources
 
 [Webpack link](https://webpack.js.org/plugins/)  
 https://webpack.js.org/plugins  
@@ -548,4 +579,3 @@ https://webpack.js.org/plugins
 
 [ref]:http://google.fr
 
-    >>>>>>d97fc768ab7262e699c9315630062e8cc84107dd
