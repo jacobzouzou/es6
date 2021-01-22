@@ -1,16 +1,4 @@
 # REACT JS
-## Resources
-https://stackedit.io/  
-https://tablegenerator.com/markdown_tables  
-https://daringfireball.net/projects/markdown  
-http://goo.gl/pp7lHb  
-https://commonmark.org  
-http://johnmacfarlane.net/babelmark2  
-http://www.writeapp.net  
-http://ia.net/writer/mac  
-http://www.bloomingsoft.com/listacular  
-http://lab.hakim.se/reveal-js
-
 ## React is JavaScript UI library
 HTML is declarative programmation for static data.  
 React is declarative programmation for dynamic data like user object and so on.
@@ -546,6 +534,11 @@ Test only concerns code, not infrastructure.
 Avoid side effect in testing.  
 Snapshot : allow to test UI.
 
+Use  for snapshot test:
+
+    npm install react-testing-library //or
+    npm install react-test-renderer
+
 ## Test coverage
   ### Edit `package.json` script section
 
@@ -579,3 +572,37 @@ https://webpack.js.org/plugins
 
 [ref]:http://google.fr
 
+## JS learning sites: 
+https://react.org : material.angular.io, vuetity.com
+https://jscomplete.com/react-cfp
+https://jscomplete.com/playground (or https://codepen.io/)
+https://github.com/MicheleBertoli/css-in-js
+
+https://jscomplete.com/react-beyond-basics
+https://jscomplete.com/why-graphql
+https://jscomplete.com/closures
+
+https://www.netlify.com
+https://reactnative.dev
+
+https://github.com/vercel/next.js/blob/canary/readme.md
+https://github.com/vercel/next.js#multi-zones
+https://github.com/vercel/next.js#multi-zones
+https://glitch.com
+
+https://codesandbox.io/s/new?file=/src/App.js
+
+## Mcking libraries
+https://github.com/jefflau/jest-fetch-mock 
+
+## Markdown
+https://stackedit.io/  
+https://tablegenerator.com/markdown_tables  
+https://daringfireball.net/projects/markdown  
+http://goo.gl/pp7lHb  
+https://commonmark.org  
+http://johnmacfarlane.net/babelmark2  
+http://www.writeapp.net  
+http://ia.net/writer/mac  
+http://www.bloomingsoft.com/listacular  
+http://lab.hakim.se/reveal-js
