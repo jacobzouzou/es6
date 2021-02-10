@@ -1,4 +1,4 @@
-# REACT JS
+﻿# REACT JS
 ## React is JavaScript UI library
 HTML is declarative programmation for static data.  
 React is declarative programmation for dynamic data like user object and so on.
@@ -13,9 +13,9 @@ Babel il a  new JS generation compiler for old browser (TC39 web site).
 It declares  block scope with : let.  
 It uses Object.freeze() to freeze object
 
-# ECMA Script 2015 : es6 overview 
+# ECMA Script 2015 (es6 overview) 
 ## Some examples
- - "const" like "let" : have block scope.  
+- "const" like "let" : have block scope. 
 - "this" in arrow function inherit from execution context : arrow function is not suited as object methods and event callback (handler).
 
 ## Interpolation
@@ -57,13 +57,13 @@ React can be installed from scratch or from "create-react-app" tool
 ## [From scratch](https://jscomplete.com/reactful)
       Full stack install: 
         For production: 
-        1 init project folder: create app folder and run `npm init -y` from it
+        1 init project folder: create app folder and run `npm init -y` from it.
         2 install express (web server): npm -i --save-dev express 
         [npm install http-server concurrently --save-dev ]
         3 install react-Dom: npm install --save-dev react-dom
         4 install webpack: npm install --save-dev webpack
         5 install webpack-cli: npm install --save-dev webpack-cli
-        6 install babel: npm install -D babel-loader @babel/core @babel/preset-env webpack
+        6 install babel: npm install -D babel-loader @babel/core @babel/preset-env webpack //for JSX
         7 install development packages:
             nodemon,
             eslint, 
@@ -94,7 +94,7 @@ React can be installed from scratch or from "create-react-app" tool
 
     run app (in separate terminals):
       npm run dev-server
-      npm run dev-bundle: package app in "dist/main.js"
+      npm run dev-bundle // package app in "dist/main.js"
   ## From scratch summary: 
     1. npm init -y
     2. npm install react react-dom --save 
@@ -263,7 +263,7 @@ Vertical whitespace is eliminated
 
 # Routing
 ## Install
-    npm install react-router-dom
+    npm install react-router-dom --save
 
 Two kinds of routes: 
 
@@ -620,5 +620,6 @@ or use sandox
     - not use "import {module} from "file", but use "const {module}= file;"
 
  - https://codepen.io/flaviocopes/pen/VqeaxB 
+
 
 
