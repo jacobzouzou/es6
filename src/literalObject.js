@@ -3,7 +3,7 @@ const PI = Math.PI;
 
 const obj = {
   //dynamic tied [variable]= variable value
-  [mystery]: 49,
+  [mystery]: 509,
   mystery: 444,
   //dynamic tied PI:PI  ~ PI
   PI,

@@ -15,6 +15,8 @@ fetch("http://localhost:3000")
   .then(getStatus)
   .then(responseJson)
   .then((data) => {
+    console.log("\n")
+    console.log("http://localhost:3000/:")
     console.log(`Object entrees : ${Object.entries(data)}`);
     console.log(`Object values : ${Object.values(data)}`);
     console.log(`Object Json string: ${JSON.stringify(data)}`);
@@ -23,10 +25,13 @@ fetch("http://localhost:3000")
     console.log(`Failed: ${error}`);
   });
 
+
 fetch("http://localhost:3000/users")
   .then(getStatus)
   .then(responseJson)
   .then((data) => {
+    console.log("\n")
+    console.log("http://localhost:3000/users:")
     console.log(`Json response: ${JSON.stringify(data)}`);
   })
   .catch((error) => {

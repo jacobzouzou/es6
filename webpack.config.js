@@ -1,11 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, options) => {
     return {
         mode: "development",
-        entry: './src/async.js',
+        entry: './src/promise-async/async.js',
 
         output: {
             path: path.resolve(__dirname, 'build'),

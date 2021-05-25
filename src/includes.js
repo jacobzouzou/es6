@@ -1,10 +1,12 @@
 //ES2016
 
 //-- includes
-if ([1, 2].indexOf(3)===-1) {
-    console.log('Not found')
+const arry=[1,2]
+if (arry.indexOf(3)===-1) {
+    console.log(arry)
+    console.log(3,'Not found')
 }
-if (![1, 2].includes(3)) {
-    console.log('Not found')
+if (arry.includes(2)) {
+    console.log(2,'Found')
 }
 

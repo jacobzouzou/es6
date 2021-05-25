@@ -3,7 +3,7 @@
 //string padding
 console.log("String padding:")
 console.log("Hello".padEnd(10), "world!");
-console.log("Hello".padEnd(19, " JavaScript, "), " world!");
+console.log("Hello".padEnd(50, " JavaScript"),"world !");
 
 //trailing commas in function
 console.log("Trailing commas:")

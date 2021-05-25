@@ -6,7 +6,7 @@ React is declarative programmation for dynamic data like user object and so on.
 ## JSX ( JavaScript and XML)
 JSX is a declarative syntax of what a component UI should be looked like.  
 It describes UI with XHTML and JavaScript.  
-Html attribute standard in React is camelCasing : Html `onchange` becomes in JSX `onChange`.
+Html attribute standard in React is camelCasing : HTML `onchange` becomes in JSX `onChange`.
 
 ## Babel
 Babel il a  new JS generation compiler for old browser (TC39 web site).  
