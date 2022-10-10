@@ -1,14 +1,14 @@
 // tagged templates: parse template with function
 //first arg of function : array of string values
 //remaining args are related to expression
-//Function return string
+//Function returns string
 
 //Example: 1
-
+//experssion :${100}
 const interpolate = (literals, ...expressions) => {
     let string =``;        
-    for (const [i, val] in expressions) {
-        string += literals[i] + expressions[i];
+    for (const [index] in expressions) {
+        string += literals[index] + expressions[index];
     }
     string += literals[literals.length - 1];
     return string;
@@ -47,7 +47,7 @@ const _interpolate = (literals, ...expressions) => {
         }
         string += literals[literals.length - 1];
         return string;
-    })
+    });
 }
 const _interpolated = _interpolate`I paid ${0} ${1}`;
 const result3= _interpolated('500','£');

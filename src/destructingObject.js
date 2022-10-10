@@ -1,36 +1,37 @@
-// const PI=Math.PI;
-// const E= Math.E;
-// const SQRTZ= Math.SQRTZ;
 
-const {PI, E, SQRTZ}= Math;
+const {PI, E, sqrt}= Math;
 
 console.log(PI);
 console.log(E);
-console.log(SQRTZ);
+console.log(sqrt(25));
 
 const circle={
-    label:'circleX',
-    radius:2,
+    label:'Circle',
+    radius:5,
 }
 
+// const circleCircumference=(radius)=> {
+//     console.log("Circle circumference :",(PI*2*radius).toFixed(2),"cm");
+// }
+// or                   
+const circleCircumference=({radius})=> {
+    console.log("Circle circumference :",(PI*2*radius).toFixed(2),"cm");
+}
+const circleArea=({radius, label})=> {
+    console.log(label +" area : ", (PI*radius**2).toFixed(2), "cm²");
+}
+const circleAreaWithdefaultValue=({radius},{precision=3}={})=> {
+    console.log(`Circle area with precision of ${precision}: `,(PI*radius**2).toFixed(precision));
+}
 
-// //get radius form circle destruction
-// const {radius,label}=circle;
-// const circleArea=(radius)=> (PI*radius*radius).toFixed(2);
-// console.log(circleArea(radius));
+const {radius,label}=circle;
 
-// //short template
-// const circleArea=({radius, label})=> (PI*radius*radius).toFixed(2);
-// console.log(circleArea(circle));
-
-// //very short template                   
-// const circleArea=({radius})=> (PI*radius*radius).toFixed(2);
-// console.log(circleArea(circle));
-
-// //several destruct arg with default value
-// const circleArea=({radius},{precision=3}={})=> (PI*radius*radius).toFixed(precision);
-// console.log(circleArea(circle));
-// console.log(circleArea(circle, {precision:6}));
+//get radius param from destructuration
+// circleCircumference({radius}); 
+circleCircumference({radius});
+circleArea(circle);
+circleAreaWithdefaultValue(circle);
+circleAreaWithdefaultValue(circle, {precision:6});
 
 
 

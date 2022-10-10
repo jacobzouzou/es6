@@ -1,6 +1,6 @@
 const done = false;
 
-function usePromise(done) {
+function makeJob(done) {
     return new Promise((resolve, reject) => {
         if (done) {
             const workIsDone = "Work is done";
@@ -12,7 +12,7 @@ function usePromise(done) {
     });
 }
 
-usePromise(false).then(message => {
+makeJob(true).then(message => {
     console.log(message);
 }).catch(error => {
     console.log(error);

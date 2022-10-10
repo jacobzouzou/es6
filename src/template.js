@@ -1,5 +1,3 @@
 const greeting = "Hello World";
-const template = `
-${greeting}
-`;
+const template = `${greeting}`;
 console.log(template);

@@ -1,16 +1,18 @@
-this.id = 'exports';
-// console.log(this);
+//Execution context
+console.log(this);
+this.id = 1;
 
 test = {
-    func1: function () {
+    id:2,
+    classicFunc: function () {
         //this in  function target object context 
-        console.log(this);
+        console.log("Classic function target object instance : ", this.id);
     },
-    func2: ()=> {
+    arrowFunc: ()=> {
         //this in arrow function target global context 
-        console.log(this);
+        console.log("Arrow function target execution context :",this.id);
     }
 }
 
-test.func1();
-test.func2(); 
+test.classicFunc();
+test.arrowFunc(); 
