@@ -1,23 +1,44 @@
 
-function usePromise(done) {
-    return new Promise((resolve, reject) => {
+function notify(done) {
+    return new  Promise ((resolve) => {
         if (done) {
-            const workIsDone = "Work is done";
-            resolve(workIsDone);
+            resolve("Work is done");
         } else {
-            const workIsNotDone = "Work is not done";
-            resolve(workIsNotDone);
+            throw Error(JSON.stringify({message: 'Fail'}));
+            // reject("Fail");
         }
-        reject(console.error)
-    });
-};
+    })};
 
 
-(async () => {
-    await usePromise(true).then(message => {
-        console.log(message);
-    }).catch(error => {
-        console.log(error);
+const promiseNotify= (done) => {
+    console.log("Enter in promise");
+    notify(done).then(result => {
+        console.log("Promise: Begin callback");
+        console.log("Promise: ",result)
+        setTimeout(() => {
+            console.log("Promise dalayed task: delayed ",result)
+        }, 500);
+        console.log("Promise: End callback");
+
     });
-})();
+    console.log("Go out the promise");
+}
+
+
+const asyncNotify = async (done) => {
+    console.log("Enter in async");
+    await notify(done).then(result => {
+        console.log("Async: Begin callback");
+        //as await
+        console.log("Ansyc: ", result);
+        setTimeout(() => {
+            console.log("Ansyc delayed task: dalayed ", result);
+        }, 1000);
+        console.log("Async: End callback");
+    });
+    console.log("Go out the Async");
+}
+
+promiseNotify(true);
+asyncNotify(true);
 

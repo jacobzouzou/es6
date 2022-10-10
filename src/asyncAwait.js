@@ -1,4 +1,4 @@
-const https=require('https');
+const https = require('https');
 
 function find(url){
     return new Promise((resolve, reject)=>{
@@ -16,14 +16,14 @@ function find(url){
 //consume promise
 
 //with .then () syntaxe
-find("https://www.javascript.com/").then(data=>console.log(data.length));
+find("https://www.javascript.com/").then(data=>console.log("Promise:", data.length));
 
 //or with use async/await  syntaxe
-const read= async function read(){
+const readAsync= async function read(){
     const data = await find("https://www.javascript.com/");
-    console.log(data.length);
+    console.log("Async:", data.length);
 };
-read();
+readAsync();
 
 //short syntaxe
 

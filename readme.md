@@ -1,27 +1,28 @@
 
-Babel: is new js generation compiler for old browser (TC39 web site)
-Declare  block scope var with : let
+# JavaScript
+Babel: is new js generation compiler for old browser (TC39 web site)  
+Declare  block scope var with : let  
 Use Object.freeze() to freeze object
 
-****************************************************************************************************
-REACT JS
-****************************************************************************************************
-React : javascript UI library
-HTML: declarative programmation for static data
+## REACT JS
+React : javascript UI library  
+HTML: declarative programmation for static data  
 React: declarative programmation for dynamic data (user object and so on)
 
-jSX ( JavaScript and XML)
-declarative syntax of what a component UI should be
-describe UI not with string but with XHTML and JavaScript
-html attribute standard is React is camelCasing: onchange => onChange
+## JSX ( JavaScript and XML)
+Declarative syntax of what a component UI should be
+describe.  
+UI not with string but with XHTML and JavaScript
+HTML attribute standard in React is camelCasing: 
+    
+    "onchange" becomes "onChange"
 
-****************************************************************************************************
-Ecma Script 2015 : es6
-****************************************************************************************************
-"const" like "let": have block scope.
-"this" in arrow function inherit from execution context:
+## Ecma Script 2015 : es6
+```const``` like ```let```: have block scope.  
+```this``` in arrow function inherit from execution context:
     arrow function is not suited as object methods and event callback (handler).
-Interpolation:
+
+### Interpolation:
     const str= `${var}`;
     Template tags - see interpolation.js -:used by a lot of libraries like GraphQL, Appolo, styledComponents, ...
     
@@ -45,25 +46,25 @@ Interpolation:
      Asynchronous: callback => Promise => async/await
 
 
-****************************************************************************************************
-Babel
-****************************************************************************************************
+### Babel
 compile (transpiling) js from one standard to an other standard
 
-Example:
+#### Example
 compile  "JSX" => "DOM API" (regular JS) 
 transpilling must happen in  build time: set up in "webpack"
 in JSX, all JS script is put in bracket:{}
 
-Install: 
-  "npm install --save-dev @babel/core @babel/cli"  //don't install babel-cli locally
+#### Install 
 
-run babel script localy:  
-  "npx babel script_file.js"
+    "npm install --save-dev @babel/core @babel/cli"  //don't install babel-cli locally
 
-configure babel with plugins: arrow functions (for example)
-  npm install --save-dev @babel/plugin-transform-arrow-functions
-  npm install --save-dev @babel/preset-env //is not plugin
+    run babel script localy:  
+      "npx babel script_file.js"
+
+#### Cnfigure babel with plugins: arrow functions (for example)
+
+    npm install --save-dev @babel/plugin-transform-arrow-functions
+    npm install --save-dev @babel/preset-env //is not plugin
 
   add config file to project root folder: ".babelrc"
 

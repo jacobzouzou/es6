@@ -1,4 +1,4 @@
-let done = false;
+const done = false;
 
 function usePromise(done) {
     return new Promise((resolve, reject) => {
