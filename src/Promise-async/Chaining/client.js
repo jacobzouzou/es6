@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/chainingServerPromise.js
 //
 // const path = require("path");
 // const fs=require("fs")
@@ -23,9 +22,7 @@ app.listen(3000, () => console.log("Server ready: http://localhost:3000"));
 //##############################################################################3333333
 //Web client
 //##############################################################################3333333
-=======
-//fetch
->>>>>>> ba9c9dc28821dd7d21f98991fc35815e4d303344:src/Promise-async/Chaining/client.js
+
 const fetch = require("node-fetch");
 
 const getStatus = (response) => {
